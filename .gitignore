@@ -45,5 +45,3 @@ coverage.out
 # Go mod and vendor directories
 *.mod
 *.vendor
-
-internal/
