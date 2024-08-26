@@ -31,5 +31,10 @@ func (apiCfg *apiConfig)handlerCreateUser(w http.ResponseWriter, r *http.Request
 		responseWithError(w, 400, fmt.Sprintf("error adding new user %v", err));
 		return
 	}
-	responseWithJSON(w, 200, databaseUserToUser(user))
+	responseWithJSON(w, 201, databaseUserToUser(user))
+}
+
+
+func (apiCfg *apiConfig)handlerGetUser(w http.ResponseWriter, r *http.Request, user database.User){
+	responseWithJSON(w, 200,databaseUserToUser(user))
 }
